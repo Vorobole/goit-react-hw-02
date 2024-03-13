@@ -1,23 +1,24 @@
 import "./App.css";
-import Profile from "./components/profile/profile.jsx";
-import userData from "./data/userData.json";
-import FriendList from "./components/FriendList/FriendList.jsx";
-import friends from "./data/friends.json";
-import TransactionHistory from "./components/TransactionHistory/TransactionHistory.jsx";
-import transactions from "./data/transaction.json";
+import Feedback from "./components/Feedback/Feedback";
+import Options from "./components/Options/Options";
+import { useState } from "react";
 
 function App() {
+  // const [feedback, setFeedback] = useState({
+  //   good: 0,
+  //   neutral: 0,
+  //   bad: 0,
+  // });
+
   return (
     <>
-      <Profile
-        name={userData.username}
-        tag={userData.tag}
-        location={userData.location}
-        avatar={userData.avatar}
-        stats={userData.stats}
-      />
-      <FriendList friends={friends} />
-      <TransactionHistory items={transactions} />
+      <h1>Sip Happens Café</h1>
+      <p>
+        Please leave your feedback about our service by selecting one of the
+        options below.
+      </p>
+      <Options />
+      <Feedback />
     </>
   );
 }
